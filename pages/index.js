@@ -3,7 +3,7 @@ import BoxPokemon from '../src/components/BoxPokemon';
 import Container from '../src/components/Container';
 
 export default function Home() {
-  const [Pokemons, setPokemons] = React.useState();
+  const [Pokemons, setPokemons] = React.useState([]);
   React.useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokedex/2/')
       .then((promissePokemon) => {
@@ -21,7 +21,6 @@ export default function Home() {
       <p>POKEDEX</p>
       {Pokemons.map((pokemon) => (
         <BoxPokemon>
-          asa
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
             alt=""
