@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 const Containe = styled.div`
-    display: flex;
-    flex: 1;
-    background-color: gray;
-    /* flex-direction: column; */
-    
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  /* width: 90%; */
+  
+/* 
+  transform: translate(-50%, -50%);
+  
+  
+  margin: auto;
+  width: 50%; */
 `;
 
 export default Containe;
