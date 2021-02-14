@@ -4,17 +4,27 @@ import Container from '../src/components/Container';
 
 export default function Home() {
   const [Pokemons, setPokemons] = React.useState();
-  fetch('https://pokeapi.co/api/v2/pokemon?limit=151/')
-    .then((promissePokemon) => promissePokemon.json())
-    .then((PokemonJSON) => setPokemons(PokemonJSON.results));
+  React.useEffect(() => {
+    fetch('https://pokeapi.co/api/v2/pokedex/2/')
+      .then((promissePokemon) => {
+        if (promissePokemon.ok) {
+          return promissePokemon.json();
+        }
+      })
+      .then((PokemonJSON) => {
+        console.log(PokemonJSON.pokemon_entries);
+        setPokemons(PokemonJSON.pokemon_entries);
+      });
+  }, []);
   return (
     <Container>
       <p>POKEDEX</p>
-      {Pokemons.map((pokemon, index) => (
+      {Pokemons.map((pokemon) => (
         <BoxPokemon>
+          asa
           <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
-            alt={pokemon.name}
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
+            alt=""
           />
         </BoxPokemon>
       ))}
