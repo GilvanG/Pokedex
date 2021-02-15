@@ -10,9 +10,9 @@ export default function Home() {
         if (promissePokemon.ok) {
           return promissePokemon.json();
         }
+        return [];
       })
       .then((PokemonJSON) => {
-        console.log(PokemonJSON.pokemon_entries);
         setPokemons(PokemonJSON.pokemon_entries);
       });
   }, []);
