@@ -38,10 +38,9 @@ Pokeball.Downer = styled.div`
 
 `;
 Pokeball.Center = styled.div`
-/* flex: 1; */
     position: absolute;
     margin-left: 58px;
-    padding: 10px;
+    /* padding: 2px; */
     height: 120px;
     width: 120px;
     border-radius: 150px;
@@ -50,7 +49,8 @@ Pokeball.Center = styled.div`
     border-color: ${black};
     background-color: ${white};
     align-items: center;
-    text-align:center;
+    text-align: center;
+    /* overflow: hidden */
 `;
 
 export default Pokeball;

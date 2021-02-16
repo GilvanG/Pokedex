@@ -1,6 +1,8 @@
 import React from 'react';
+import Head from 'next/head';
 import BoxPokemon from '../src/components/BoxPokemon';
 import Container from '../src/components/Container';
+import Header from '../src/components/Header';
 
 export default function Home() {
   const [Pokemons, setPokemons] = React.useState([]);
@@ -16,17 +18,25 @@ export default function Home() {
         setPokemons(PokemonJSON.pokemon_entries);
       });
   }, []);
+
   return (
-    <Container>
-      <p>POKEDEX</p>
-      {Pokemons.map((pokemon) => (
-        <BoxPokemon>
-          <img
+    <div>
+      <Head>
+        <title>Pokedex</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
+      </Head>
+      <Header>
+        POKEDEX
+      </Header>
+      <Container>
+        {Pokemons.map((pokemon) => (
+          <BoxPokemon
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
-            alt=""
+            alt={`Pokemon${pokemon.entry_number}`}
           />
-        </BoxPokemon>
-      ))}
-    </Container>
+        ))}
+      </Container>
+    </div>
   );
 }
