@@ -17,8 +17,10 @@ const Pokeball = styled.div`
     overflow: hidden;
     color: blue;
     align-items:center;
+    box-shadow: 0 1px 6px rgba(34, 34, 36, 1)
     
 `;
+
 Pokeball.Topper = styled.div`
     height: 80px;
     width: 300px;
@@ -27,6 +29,7 @@ Pokeball.Topper = styled.div`
     justify-content: flex-start;
     align-items: center;
 `;
+
 Pokeball.Downer = styled.div`    
     height: 80px;
     width: 300px;
@@ -37,6 +40,7 @@ Pokeball.Downer = styled.div`
     margin-top: 20px;
 
 `;
+
 Pokeball.Center = styled.div`
     position: absolute;
     margin-left: 58px;

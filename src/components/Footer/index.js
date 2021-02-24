@@ -4,42 +4,42 @@
 import styled from 'styled-components';
 
 const white = '#f0f0f0';
-const red = '#f00000';
 const black = '#222224';
 
-const Header = styled.div`
+const Footer = styled.div`
   width: calc(100%-8px);
   margin: -8px;
   margin-left:-8px;
-  margin-bottom: 8px;
-  padding: 16px 16px 0px 16px;
+  margin-top: 8px;
+  padding: 0px 16px 16px 16px;
+  overflow: hidden;
   
-  color: ${white};
-  background-color: ${red};
+  color: ${black};
+  background-color: ${white};
   
-  border-width: 10px;
-  border-bottom-left-radius: 8px 8px;
-  border-bottom-right-radius: 8px 8px;
+  border-width: 8px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
   border-style: solid;
   border-color: ${black};
 
   align-items: center;
-  overflow: hidden;
-  font-size: 240%;
-  font-family: 'Russo One';
+  font-size: 140%;
+  font-family: 'PT Sans Narrow';
   text-align: center;
 `;
 
-Header.Circle = styled.div`
+Footer.Circle = styled.div`
     position: relative;
     margin: auto;
+    margin-top: 0px;
     height: 30px;
     width: 60px;
-    border-top-left-radius: 150px 150px;
-    border-top-right-radius: 150px 150px;
+    border-bottom-left-radius: 150px 150px;
+    border-bottom-right-radius: 150px 150px;
   
     /* border-radius: 150px; */
-    border-top-style: solid;
+    border-bottom-style: solid;
     border-right-style: solid;
     border-left-style: solid;
     
@@ -47,17 +47,18 @@ Header.Circle = styled.div`
     border-color: ${black};
     background-color: ${white};
 `;
-Header.Text = styled.div`
-  padding: 8px;
+
+Footer.Text = styled.div`
+  padding: 16px;
 `;
 
-const HeaderPokeball = (props) => (
-  <Header>
-    <Header.Text>
+const FooterPokeball = (props) => (
+  <Footer>
+    <Footer.Circle />
+    <Footer.Text>
       {props.children}
-    </Header.Text>
-    <Header.Circle />
-  </Header>
+    </Footer.Text>
+  </Footer>
 );
 
-export default HeaderPokeball;
+export default FooterPokeball;

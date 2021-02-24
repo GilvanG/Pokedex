@@ -1,11 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
-import BoxPokemon from '../src/components/BoxPokemon';
-import Container from '../src/components/Container';
 import Header from '../src/components/Header';
+import Footer from '../src/components/Footer';
+import Container from '../src/components/Container';
+import BoxPokemon from '../src/components/BoxPokemon';
 
 export default function Home() {
   const [Pokemons, setPokemons] = React.useState([]);
+  const [hasCreatedBox, setHasCreatedBox] = React.useState(false);
   React.useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokedex/2/')
       .then((promissePokemon) => {
@@ -16,6 +18,7 @@ export default function Home() {
       })
       .then((PokemonJSON) => {
         setPokemons(PokemonJSON.pokemon_entries);
+        setHasCreatedBox(true);
       });
   }, []);
 
@@ -23,20 +26,25 @@ export default function Home() {
     <div>
       <Head>
         <title>Pokedex</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
       </Head>
       <Header>
         POKEDEX
       </Header>
-      <Container>
-        {Pokemons.map((pokemon) => (
-          <BoxPokemon
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
-            alt={`Pokemon${pokemon.entry_number}`}
-          />
-        ))}
-      </Container>
+      {hasCreatedBox === false
+        ? (<div>Caregando</div>)
+        : (
+          <Container>
+            {Pokemons.map((pokemon) => (
+              <BoxPokemon
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
+                alt={`Pokemon Número ${pokemon.entry_number}`}
+              />
+            ))}
+          </Container>
+        )}
+      <Footer>
+        Copyright 2021 by Gilvan Gomes. All Rights Reserved.
+      </Footer>
     </div>
   );
 }
