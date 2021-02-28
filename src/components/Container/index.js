@@ -5,6 +5,7 @@ const Containe = styled.div`
   background-color: ${background};
   margin: auto;
   text-align: center;
+  /* padding: 8%; */
   /* width: 90%; */
   
 /* 

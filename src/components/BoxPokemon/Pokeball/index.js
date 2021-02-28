@@ -13,7 +13,7 @@ const Pokeball = styled.div`
     border-style: groove;
     border-color: ${black};
     border-radius: 5px;
-    margin: 5px;
+    /* margin: 5px; */
     overflow: hidden;
     color: blue;
     align-items:center;

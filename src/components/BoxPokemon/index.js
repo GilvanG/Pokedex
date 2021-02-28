@@ -6,6 +6,7 @@ import Pokeball from './Pokeball';
 
 const ContainerPokeball = styled.div`
   display: inline-flex;
+  padding: 0.5% 1.4vh 0.5% 1.4vh;
   /* text-align: center;
   align-items: center; */
   /* flex: 0; */

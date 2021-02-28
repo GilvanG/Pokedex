@@ -4,6 +4,7 @@ import Header from '../src/components/Header';
 import Footer from '../src/components/Footer';
 import Container from '../src/components/Container';
 import BoxPokemon from '../src/components/BoxPokemon';
+import Loading from '../src/components/Loading';
 
 export default function Home() {
   const [Pokemons, setPokemons] = React.useState([]);
@@ -31,7 +32,7 @@ export default function Home() {
         POKEDEX
       </Header>
       {hasCreatedBox === false
-        ? (<div>Caregando</div>)
+        ? (<Loading />)
         : (
           <Container>
             {Pokemons.map((pokemon) => (
