@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^4.0.3",
     "json-pokemon": "^1.0.0",
     "lottie-react": "^2.1.0",
     "next": "^10.0.0",

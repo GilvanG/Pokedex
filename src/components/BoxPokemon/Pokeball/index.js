@@ -43,7 +43,8 @@ Pokeball.Downer = styled.div`
 
 Pokeball.Center = styled.div`
     position: absolute;
-    margin-left: 58px;
+    margin-left: 70px;
+    margin-right: 70px;
     /* padding: 2px; */
     height: 120px;
     width: 120px;
