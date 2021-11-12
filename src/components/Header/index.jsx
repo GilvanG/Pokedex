@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import styled from 'styled-components';
 
 const white = '#f0f0f0';
@@ -8,7 +7,7 @@ const red = '#f00000';
 const black = '#222224';
 
 const Header = styled.div`
-  width: calc(100%-8px);
+  width: calc(100%-8px); 
   margin: -8px;
   margin-left:-8px;
   margin-bottom: 8px;
@@ -51,10 +50,10 @@ Header.Text = styled.div`
   padding: 8px;
 `;
 
-const HeaderPokeball = (props) => (
+const HeaderPokeball = ({ children }) => (
   <Header>
     <Header.Text>
-      {props.children}
+      {children}
     </Header.Text>
     <Header.Circle />
   </Header>

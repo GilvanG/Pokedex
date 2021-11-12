@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/react-in-jsx-scope */
+import React from 'react';
 import styled from 'styled-components';
 
 const white = '#f0f0f0';
@@ -52,11 +52,11 @@ Footer.Text = styled.div`
   padding: 16px;
 `;
 
-const FooterPokeball = (props) => (
+const FooterPokeball = ({ children }) => (
   <Footer>
     <Footer.Circle />
     <Footer.Text>
-      {props.children}
+      {children}
     </Footer.Text>
   </Footer>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
+import HeaderPokeball from '../src/components/Header';
+import FooterPokeball from '../src/components/Footer';
 import Container from '../src/components/Container';
 import BoxPokemon from '../src/components/BoxPokemon';
 import Loading from '../src/components/Loading';
@@ -24,28 +24,31 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Pokedex</title>
       </Head>
-      <Header>
-        POKEDEX
-      </Header>
       {hasCreatedBox === false
         ? (<Loading />)
         : (
-          <Container>
-            {Pokemons.map((pokemon) => (
-              <BoxPokemon
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
-                alt={`Pokemon Número ${pokemon.entry_number}`}
-              />
-            ))}
-          </Container>
+          <>
+            <HeaderPokeball>
+              POKEDEX
+            </HeaderPokeball>
+            <Container>
+              {Pokemons.map((pokemon) => (
+                <BoxPokemon
+                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`}
+                  alt={`Pokemon Número ${pokemon.entry_number} - ${pokemon.pokemon_species}`}
+                  key={`${pokemon.entry_number}-${pokemon.pokemon_species}`}
+                />
+              ))}
+            </Container>
+          </>
         )}
-      <Footer>
+      <FooterPokeball>
         Copyright 2021 by Gilvan Gomes. All Rights Reserved.
-      </Footer>
-    </div>
+      </FooterPokeball>
+    </>
   );
 }
