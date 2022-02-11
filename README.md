@@ -1,6 +1,6 @@
-# Pokedex Kanto 
+# Pokedex 
 
-> Projeto matar o tempo livre e pratica Nextjs
+> Projeto matar o tempo livre e pratica Nextjs, criando uma pokedex Single Page Application. 
 >
 > Quer ver como ta ficando? Acessa a [**DEMO**](https://pokedex-gilvang.vercel.app/)
 
@@ -14,7 +14,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Exibir o 151 Pokemons de Kanto
 - [x] Animações de Inteções com a Box
 - [ ] Tela de Com Informações Sobre o Pokemon
-- [ ] Expandir Para Johto?
+- [x] Expandir De Johto até Galar?
+- [] Filtros de Busca
 
 
 ## Contribuir
